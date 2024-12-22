@@ -437,24 +437,24 @@ int main(){
     //   **
     //    *
 
-    int n;
-    cin >> n;
-    int i = 1;
-    while(i <=n){
-        int space = 1;
-        while(space <= i){
-            cout << " ";
-            space = space + 1;
-        }
-        int j = 1;
-        while(j <= n - i + 1){
-            cout << "*";
-            j = j +1;
-        }
+    // int n;
+    // cin >> n;
+    // int i = 1;
+    // while(i <=n){
+    //     int space = 1;
+    //     while(space < i){
+    //         cout << " ";
+    //         space = space + 1;
+    //     }
+    //     int j = 1;
+    //     while(j <= n - i + 1){
+    //         cout << "*";
+    //         j = j +1;
+    //     }
 
-        cout << endl;
-        i = i +1;
-    }
+    //     cout << endl;
+    //     i = i +1;
+    // }
 
 
     // PATTERN 20
@@ -468,7 +468,7 @@ int main(){
     // int i = 1;
     // while(i <=n){
     //     int space = 1;
-    //     while(space <=i){
+    //     while(space < i){
     //         cout << " ";
     //         space = space + 1;
 
@@ -481,6 +481,71 @@ int main(){
     //     cout << endl;
     //     i = i +1;
     // }
+
+    // PATTERN 21
+    //     1
+    //    121
+    //   12321
+    //  1234321
+
+    //  int n;
+    //  cin >> n;
+    //  int i = 1;
+    //  while(i <=n){
+    //     int space = n - i;
+    //     while(space){
+    //         cout << " ";
+    //         space = space - 1;
+    //     }
+
+    //     int j = 1;
+    //     while(j <= i){
+    //         cout << j;
+    //         j = j +1;
+    //     }
+
+    //     int start = i -1;
+    //     while(start){
+    //         cout << start;
+    //         start = start - 1;
+    //     }
+
+    //     cout << endl;
+    //     i = i +1;
+    //  }
+
+
+    // PATTERN 22 DABANG (TAGDA SAWAL)
+    // 1234554321
+    // 1234**4321
+    // 123****321
+    // 12******21
+    // 1********1
+
+    int n;
+    cin >> n;
+    int i = 1;
+    while(i <=n){
+        int j =1;
+        while(j <= n - i + 1){
+            cout << j;
+            j = j +1;
+        }
+
+        j = 1;
+        while(j <= (i-1)*2){
+            cout << "*";
+            j = j +1;
+        }
+
+    
+
+        cout << endl;
+        i = i +1;
+    }
+
+
+
 
 
 
