@@ -522,35 +522,192 @@ int main(){
     // 12******21
     // 1********1
 
-    int n;
-    cin >> n;
-    int i = 1;
-    while(i <=n){
-        int j =1;
-        while(j <= n - i + 1){
-            cout << j;
-            j = j +1;
-        }
+    // int n;
+    // cin >> n;
+    // int i = 1;
+    // while(i <=n){
+    //     int j =1;
+    //     while(j <= n - i + 1){
+    //         cout << j;
+    //         j = j +1;
+    //     }
 
-        j = 1;
-        while(j <= (i-1)*2){
-            cout << "*";
-            j = j +1;
-        }
+    //     j = 1;
+    //     while(j <= (i-1)*2){
+    //         cout << "*";
+    //         j = j +1;
+    //     }
 
     
 
+    //     cout << endl;
+    //     i = i +1;
+    // }
+
+
+    // EXTRA PATTERNS
+    // PATTERN 23
+    //     *
+    //    ***
+    //   *****
+    //  *******
+    // int n;
+    // cin >>n;
+    // int i = 1;
+    // while(i<=n){
+    //     int space  = 1;
+    //     while(space <= (n - i)){
+    //         cout << " ";
+    //         space = space + 1;
+
+    //     }
+    //     int j = 1;
+    //     while(j<= (2*i - 1)){
+    //         cout << "*";
+    //         j = j +1;
+    //     }
+
+    //     cout << endl;
+    //     i = i +1;
+        
+    // }
+
+
+    // PATTERN 24
+    //     *
+    //    * *
+    //   * * *
+    //  * * * *
+
+    // int n;
+    // cin >>n;
+    // int i = 1;
+    // while(i<=n){
+    //     int space = 1;
+    //     while(space <= (n - i)){
+    //         cout << " ";
+    //         space = space + 1;
+
+    //     }
+    //     int j = 1;
+    //     while(j <=i){
+    //         cout << "* ";
+    //         j = j +1;
+    //     }
+    //     cout << endl;
+    //     i = i +1;
+    // }
+
+
+    //PATTERN 25
+    //   * * * *
+    //    * * *
+    //     * *
+    //      *
+
+
+    // PATTERN 26
+    //    1
+    //   2 3
+    //  4 5 6
+    // 7 8 9 10
+     
+
+    //  int n;
+    //  cin >>n;
+    //  int i =1;
+    //  int count = 1;
+    //  while (i<=n){
+    //     int space = n -i;
+    //     int j = 0;
+    //     while(j< space){
+    //         cout << " ";
+    //         j++;
+    //     }
+    //     j =1;
+    //     while(j<=i){
+    //         cout << " " << count << "";
+    //         count = count +1;
+    //         j = j +1;
+    //     }
+    //     cout << endl;
+    //     i = i +1;
+    //  }
+
+
+    //PATTERN 27
+    //    1
+    //   1 2
+    //  1 2 3
+    // 1 2 3 4
+
+
+    // int n;
+    // cin >>n;
+    // int i = 1;
+    // while(i<=n){
+    //     int space = n-i;
+    //     int j = 0;
+    //     while(j <space){
+    //          cout << " ";
+    //          j++;
+    //     }
+    //     j = 1;
+    //     while(j<=i){
+    //         cout << j << " ";
+    //         j++;
+    //     }
+    //     cout << endl;
+    //     i++;
+    // }
+
+
+    // PATTERN 28
+    //    1111
+    //    2222
+    //    3333
+    //    4444
+
+    // int n;
+    // cin >>n;
+    // int i =1;
+    // while(i<=n){
+    //     int j = 1;
+    //     while(j<=n){
+    //         cout << i;
+    //         j++;
+    //     }
+    //     cout << endl;
+    //     i++;
+    // }
+
+
+    //PATTERN 29
+    // A
+    // AB
+    // ABC
+    
+    int n;
+    cin >>n;
+    int i = 1;
+    while(i<=n){
+        int space = n-i;
+        int j = 0;
+        while(j<= space){
+            cout << " ";
+            j++;
+        }
+        j = 1;
+        char ch = 'A';
+        while(j<=i){
+            
+            cout << ch << " ";
+            ch++;
+            j++;
+        }
         cout << endl;
-        i = i +1;
+        i++;
     }
-
-
-
-
-
-
-
-
 
 
 
