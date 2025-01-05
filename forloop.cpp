@@ -33,43 +33,43 @@ int main(){
 
     // FIBONACCI SERIES
 
-    // int n = 10;
+    int n = 10;
 
-    // int a = 0;
-    // int b = 1;
-    // cout << a << " " << b << " "; 
+    int a = 0;
+    int b = 1;
+    cout << a << " " << b << " "; 
 
-    // for(int i = 1; i<=n; i++){
-    //     int next = a+b;
-    //     cout << next << " ";
+    for(int i = 1; i<=n; i++){
+        int next = a+b;
+        cout << next << " ";
 
-    //     a = b;
-    //     b = next;  
-    // }
+        a = b;
+        b = next;  
+    }
 
 
     // PRIME NUMBER
 
-    int n;
-    cout << "Enter the value of n" << endl;
-    cin >>n;
+    // int n;
+    // cout << "Enter the value of n" << endl;
+    // cin >>n;
 
-    bool isPrime = 1;
+    // bool isPrime = 1;
 
-    for(int i = 2; i<n; i++){
-        if(n%i == 0){
-           // cout << "Not a prime number " << endl;
-            isPrime = 0;
-            break;
-        }
+    // for(int i = 2; i<n; i++){
+    //     if(n%i == 0){
+    //        // cout << "Not a prime number " << endl;
+    //         isPrime = 0;
+    //         break;
+    //     }
         
-    }
+    // }
 
-    if(isPrime == 0){
-        cout << "Not  a prime number" << endl;
-    }
-    else{
-        cout << "It is a prime number" << endl;
-    }
+    // if(isPrime == 0){
+    //     cout << "Not  a prime number" << endl;
+    // }
+    // else{
+    //     cout << "It is a prime number" << endl;
+    // }
 
 }
