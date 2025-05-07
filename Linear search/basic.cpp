@@ -7,11 +7,10 @@ bool search(int arr[], int size, int key){
             return 1;
         }
     }
-    return 0;
+    return 0; 
 
 
 }
-
 
 
 

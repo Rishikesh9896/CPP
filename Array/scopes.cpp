@@ -6,7 +6,7 @@ void update(int arr[], int n){
     cout << "Inside the function" << endl;
 
     //updating the array's firts element
-    arr[0] = 120;
+    arr[0] = 120; 
 
     for(int i = 0; i<3; i++){
         cout << arr[i] << " ";
