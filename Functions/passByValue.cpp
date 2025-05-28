@@ -12,4 +12,4 @@ int main(){
     dummy(n);
     cout << "Number is " << n << endl;
 
-}
+}   

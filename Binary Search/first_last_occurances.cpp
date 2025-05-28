@@ -56,8 +56,16 @@ int lastOcc(int arr[], int n, int key){
 int main(){
 
     int even[5] = {1, 2, 3, 3, 5};
-    cout << "First occurance of 3 is at index " << firstOcc(even, 5, 3) << endl;
-    cout << "Last occurance of 3 is at index " << lastOcc(even, 5, 3) << endl;
+    int first = firstOcc(even, 5, 3);
+    int last = lastOcc(even, 5, 3);
+    cout << "First occurance of 3 is at index " << first << endl;
+    cout << "Last occurance of 3 is at index " << last << endl;
+
+    int total = (last - first) + 1;
+
+    cout << total;
+
+    
 
 
 }
