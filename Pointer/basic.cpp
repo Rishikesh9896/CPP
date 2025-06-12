@@ -13,6 +13,6 @@ int main(){
     cout << "Value is " << *ptr << endl;
 
     cout << "Size of integer is " << sizeof(num) << endl;
-    cout << "Size of pointer is " << sizeof(*ptr) << endl;
+    cout << "Size of pointer is " << sizeof(ptr) << endl;
 
 }
