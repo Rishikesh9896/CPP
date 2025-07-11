@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+// bad practice 
+// in this wrnign is not cimng but warnig is coming so this is bad practice of using reference variables like this in return vale
+// memory aceess na kar pau or maanlo khuch aur padha ho 
 int& func(int a){
     int num = a;
     int& ans = num;

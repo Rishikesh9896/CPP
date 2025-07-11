@@ -11,6 +11,8 @@ void print(int n){
 
     // recursivd relation
     print(n-1);
+
+    // it is a tail recursion .... agar hum cout << n << endl isko print(n-1) kai niche likhe toh yeh head recursion baan jayega
 }
 
 int main(){

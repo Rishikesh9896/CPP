@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Macro creation
 #define PI 3.14
 
 int main(){
