@@ -38,6 +38,9 @@ class Hero {
 int main(){
     // creation of object
     Hero ramesh ;
+
+    // in this size concept of padding and greedy alignmemnt is being used so give with it 
+
     cout << "Size of ramesh is " << sizeof(ramesh) << endl;
      
 
@@ -53,6 +56,8 @@ int main(){
     cout << "Heatlh is " << ramesh.getHealth() << endl;
     cout << "Level is " << ramesh.level << endl;
     //cout << "Size " << sizeof(h1) << endl;
+
+    
 
 
 

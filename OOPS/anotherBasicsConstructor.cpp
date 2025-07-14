@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstring>
+
 using namespace std;
 
 class Hero {
@@ -9,10 +11,12 @@ class Hero {
     int health;
 
     public:
+    char *name;
     char level;
 
     Hero(){
         cout << "Constructor called " << endl;
+        name = new char[100];
     }
 
     // parametrized constructor
@@ -27,15 +31,16 @@ class Hero {
         this->health = health;
     }
 
-    // copy constructor
-    Hero(Hero& temp){
-        cout << "Copy constructor called " << endl;
-        this->health = temp.health;
-        this->level = temp.level;
+    // // copy constructor
+    // Hero(Hero& temp){
+    //     cout << "Copy constructor called " << endl;
+    //     this->health = temp.health;
+    //     this->level = temp.level;
 
-    }
+    // }
 
     void print(){
+        cout << "Name " << this->name << endl;
         cout << "Health " << this->health << endl;
         cout << "level" << this->level  << endl;
     }
@@ -57,6 +62,10 @@ class Hero {
         level = ch;
     }
 
+    void setName(char name[]){
+        strcpy(this->name, name);
+    }
+
 };
 
 int main(){
@@ -76,15 +85,34 @@ int main(){
 
 
 
-    // new concept 
-    Hero suresh(70, 'C');
-    suresh.print();
+//     // new concept 
+//     Hero suresh(70, 'C');
+//     suresh.print();
 
 
-// copy constructor
-    Hero R(suresh); 
-    R.print();
+// // copy constructor
+//     Hero R(suresh); 
+//     R.print();
 
+
+// shallow and deep copy concept 
+
+Hero hero1;
+hero1.setHealth(13);
+hero1.setLevel('D');
+char name[7] = "Rishi";
+hero1.setName(name);
+
+hero1.print();
+
+// use default copy constructor 
+Hero hero2(hero1);
+hero2.print();
+
+hero1.name[0] = 'G';
+hero1.print();
+
+hero2.print();
     
    
 
