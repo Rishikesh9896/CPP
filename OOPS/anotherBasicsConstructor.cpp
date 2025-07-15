@@ -13,6 +13,7 @@ class Hero {
     public:
     char *name;
     char level;
+    static int timeToComplete;
 
     Hero(){
         cout << "Constructor called " << endl;
@@ -31,13 +32,18 @@ class Hero {
         this->health = health;
     }
 
-    // // copy constructor
-    // Hero(Hero& temp){
-    //     cout << "Copy constructor called " << endl;
-    //     this->health = temp.health;
-    //     this->level = temp.level;
+    // copy constructor
+    Hero(Hero& temp){
 
-    // }
+        char *ch = new char[strlen(temp.name) + 1];
+        strcpy(ch, temp.name);
+        this->name = ch;
+
+        cout << "Copy constructor called " << endl;
+        this->health = temp.health;
+        this->level = temp.level;
+
+    }
 
     void print(){
         cout << "Name " << this->name << endl;
@@ -66,7 +72,18 @@ class Hero {
         strcpy(this->name, name);
     }
 
+    static int random(){
+        return timeToComplete;
+    }
+
+    // Destructor 
+    ~Hero(){
+        cout << "Desturctor bhai called " << endl;
+    }
+
 };
+
+int Hero :: timeToComplete = 5;
 
 int main(){
 
@@ -97,22 +114,47 @@ int main(){
 
 // shallow and deep copy concept 
 
-Hero hero1;
-hero1.setHealth(13);
-hero1.setLevel('D');
-char name[7] = "Rishi";
-hero1.setName(name);
+ // Hero hero1;
+ // hero1.setHealth(13);
+ // hero1.setLevel('D');
+ // char name[7] = "Rishi";
+// hero1.setName(name);
 
-hero1.print();
+ // // hero1.print();
 
-// use default copy constructor 
-Hero hero2(hero1);
-hero2.print();
+ // // use default copy constructor 
+ // Hero hero2(hero1);
+ // // hero2.print();
 
-hero1.name[0] = 'G';
-hero1.print();
+  // hero1.name[0] = 'G';
+ // hero1.print();
 
-hero2.print();
+ // hero2.print();
+
+ // hero1 = hero2;
+
+// hero1.print();
+// hero2.print();
+
+// DESTURCTOR 
+// static
+// Hero a;
+
+// // dynamically 
+// Hero *b = new Hero();
+
+// //manually destructor call karna padhega 
+// delete b;
+
+
+cout << Hero :: timeToComplete << endl;
+
+cout << Hero :: random() << endl;
+
+
+
+
+
     
    
 
