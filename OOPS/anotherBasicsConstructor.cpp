@@ -150,6 +150,9 @@ int main(){
 cout << Hero :: timeToComplete << endl;
 
 cout << Hero :: random() << endl;
+// access only static keywords and not others
+
+
 
 
 
