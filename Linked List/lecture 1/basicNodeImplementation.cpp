@@ -39,6 +39,36 @@ void print(Node* &head){
     cout << endl;
 }
 
+void InsertAtPosition(Node* &tail , Node* & head , int position , int d  ){
+
+    if(position == 1){
+        InsertAtHead(head, d );
+        return;
+    }
+
+    Node* temp =  head;
+    int cnt = 1;
+
+    while(cnt < position - 1){
+        temp = temp-> next;
+        cnt++;
+    }
+
+    // inserting at last position 
+    if(temp-> next == NULL){
+        InserAtTail(tail, d);
+        return ;
+    }
+
+    // creating a new node for d 
+    Node* nodeToInsert = new Node(d);
+    
+    nodeToInsert-> next = temp-> next;
+    temp->next = nodeToInsert;
+
+
+}
+
 int main(){
 
      // dyanmaic allocation 
@@ -65,6 +95,11 @@ int main(){
     InserAtTail(tail, 12);
 
     print(head);
+
+    InsertAtPosition(tail, head, 1, 22);
+    print(head);
+
+
 
     
 
