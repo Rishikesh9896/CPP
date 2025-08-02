@@ -11,6 +11,17 @@ class Node {
         this -> next = NULL;
     }
 
+
+    // destructor 
+    ~Node(){
+        int value = this-> data;
+        if(this-> next != NULL){
+            delete next;
+            this-> next = NULL;
+        }
+        cout << "Memory is free from node with data " << value << endl;
+    }
+
 };
 
 void InsertAtHead(Node* &head , int d){
@@ -69,6 +80,36 @@ void InsertAtPosition(Node* &tail , Node* & head , int position , int d  ){
 
 }
 
+void deleteNode(int position, Node* & head){
+    // deleting first node 
+    if(position  ==  1){
+        Node* temp = head ;
+        head = head->next ;
+        // memory free karwao 
+        temp-> next = NULL;
+        delete temp;
+
+    }
+
+    else{
+        // deleting any middle node or last node 
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int cnt = 1;
+        while(cnt < position){
+            prev = curr;
+            curr = curr->next;
+            cnt ++;
+        }
+
+        prev-> next = curr-> next;
+        curr -> next = NULL;
+        delete curr;
+
+    }
+}
+
 int main(){
 
      // dyanmaic allocation 
@@ -98,6 +139,22 @@ int main(){
 
     InsertAtPosition(tail, head, 1, 22);
     print(head);
+
+    
+    cout << "Head " << head-> data << endl;
+    cout << "Tail " << tail-> data << endl;
+
+    deleteNode(1, head);
+    print(head);
+
+    cout << "Head " << head-> data << endl;
+    cout << "Tail " << tail-> data << endl;
+
+
+
+
+
+    
 
 
 
