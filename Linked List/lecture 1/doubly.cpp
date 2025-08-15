@@ -12,6 +12,7 @@ class Node {
         this-> data = d;
         this-> prev = NULL;
         this-> next = NULL;
+         
 
     }
 
