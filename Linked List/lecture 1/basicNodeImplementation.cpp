@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 using namespace std;
 
 class Node {
@@ -16,7 +17,7 @@ class Node {
     ~Node(){
         int value = this-> data;
         if(this-> next != NULL){
-            delete next;
+            //delete next;
             this-> next = NULL;
         }
         cout << "Memory is free from node with data " << value << endl;
@@ -111,6 +112,89 @@ void deleteNode(int position, Node* & head){
     }
 }
 
+bool detectLoop(Node* head){
+    if(head == NULL){
+        return false;
+    }
+    
+map<Node*, bool> visited;
+
+Node* temp = head;
+while(temp != NULL){
+    // cycle is present 
+    if(visited[temp] == true){
+        cout << "Present on element " << temp -> data << endl;
+        return true;
+    }
+    visited[temp] = true;
+    temp = temp -> next;
+}
+
+return false;
+
+}
+
+Node* floydDetection(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow != NULL && fast != NULL){
+        fast = fast -> next;
+        if(fast != NULL){
+            fast = fast -> next;
+        }
+
+        slow = slow -> next;
+
+         if(slow == fast){
+            cout << "Present at " << slow -> data << endl;
+        return slow;
+    }
+    }
+
+    return NULL;
+
+   
+}
+
+Node* getStartingNode(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* intersection = floydDetection(head);
+    Node* slow = head;
+
+    while(slow != intersection){
+        slow = slow -> next;
+        intersection = intersection -> next;
+    }
+
+    return slow;
+}
+
+void removeLoop(Node* head){
+    if(head == NULL){
+        return ;
+    }
+
+    Node* startofLoop = getStartingNode(head);
+     if(startofLoop == NULL) return;
+    Node* temp = startofLoop;
+
+    while(temp -> next != startofLoop){
+        temp = temp -> next;
+    }
+
+    temp -> next = NULL;
+
+
+}
+
 int main(){
 
      // dyanmaic allocation 
@@ -130,26 +214,57 @@ int main(){
     Node* head = node1;
     Node* tail = node1;
 
-    print(head);
+    //print(head);
 
     //InsertAtHead(head, 12);
 
     InserAtTail(tail, 12);
 
-    print(head);
+    //print(head);
 
     InsertAtPosition(tail, head, 1, 22);
-    print(head);
+
+    InsertAtPosition(tail, head, 2, 33);
+    InsertAtPosition(tail, head, 1, 3);
+    //print(head);
 
     
+    // cout << "Head " << head-> data << endl;
+    // cout << "Tail " << tail-> data << endl;
+
+    // // deleteNode(1, head);
+    // // print(head);
+
+    
+
+    tail -> next = head -> next ;
+
     cout << "Head " << head-> data << endl;
     cout << "Tail " << tail-> data << endl;
 
-    deleteNode(1, head);
+    // if(detectLoop(head)){
+    //     cout << "Cycle is present " << endl;
+    // }
+
+    // else{
+    //     cout << "No cycle is present " << endl;
+    // }
+
+     if(floydDetection(head) != NULL){
+        cout << "Cycle is present " << endl;
+    }
+
+    else{
+        cout << "No cycle is present " << endl;
+    }
+
+    Node* loop =  getStartingNode(head);
+    cout << "Loop starts at " << loop -> data << endl;
+
+    removeLoop(head);
     print(head);
 
-    cout << "Head " << head-> data << endl;
-    cout << "Tail " << tail-> data << endl;
+
 
 
 
