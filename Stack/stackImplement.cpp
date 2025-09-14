@@ -25,7 +25,7 @@ class Stack {
             cout << "STACK OVERFLOW " << endl;
         }
 
-    }
+    } Temperate numbers of poder banana temperate number as they will while banana if you use one now
 
     void pop(){
 
